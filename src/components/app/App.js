@@ -8,9 +8,8 @@ class App extends Component {
   gotService = new gotService();
 
   cons = () => {
-    let arr = this.gotService.getData();
-    console.log(arr);
-
+    this.gotService.getData();
+    //console.log(arr);
   };
 
  render() {
