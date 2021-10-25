@@ -2,12 +2,15 @@ import React, {Component} from 'react';
 import './card.css';
 
 class Card extends Component {
+    //cards = this.props.cardJSX();
+    
     render () {
         return (
-            <div className='card'>
+            
+             <div className='card'>
                 <div className='cardHeaderContainer'>
                     <img className='houseImg' alt='houseImage' src="https://loremflickr.com/320/240?random=3"/>
-                    <div className='cardStatus'>Independent living</div>
+                    <div className='type'>Independent living</div>
                 </div>
                 <div className='cardDescription'>
                     <div className='title'>Brunlees Court</div>

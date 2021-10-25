@@ -1,0 +1,67 @@
+.cardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+
+
+
+  /* card */
+
+  *{
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    
+    margin: 0;
+  }
+  
+  .card {
+    overflow: hidden;
+    width: 380px;
+    height: 380px;
+    margin-bottom: 38px;
+    border: 1px solid #D8D8D8;
+    background-color: #F8F8F8;
+  }
+  
+  .houseImg {
+    width: 560px;
+    height: 230px;
+    background-color: rgb(100, 100, 100);
+  
+  }
+  
+  .cardHeaderContainer {
+    position: relative;
+  }
+  
+  .type {
+    background-color: #006F79;
+    display: inline-block;
+    padding: 5px 10px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  
+  .type.rest {
+    background-color: #EC6608;
+  }
+  
+  .cardDescription {
+    padding: 15px;
+  }
+  
+  .title {
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 27px;
+  }
+    
+  .address {
+    margin-bottom: 10px;
+  }

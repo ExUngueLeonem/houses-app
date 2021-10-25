@@ -1,21 +1,46 @@
 import React, {Component} from 'react';
 import './App.css';
-import Card from '../card';
 import gotService from '../../services/gotService';
+import CardList from '../cardList'
 
 
 class App extends Component {
   gotService = new gotService();
 
-  cons = () => {
-    this.gotService.getData();
-    //console.log(arr);
-  };
+  constructor(props){
+    super(props);
+
+    this.state = {
+      cardData: []
+    }
+
+    this.updateCardsList = this.updateCardsList.bind(this);
+  }
+
+  updateCardsList = () => {
+    this.gotService.getData()
+      .then(item => this.setState({cardData: item}))
+      //.then(() => console.log('state allo', this.state.cardData))
+  }
+
+  //я хочу получить массив данных из getData
+  //я хочу поместить массив данных в cardList
+  //вся эта хуйня асинхронная, поэтому надо, как-то сделать чтобы card list подождал данные
+
+
+  componentDidMount(){
+    this.updateCardsList()
+  }
+
+/* 
+    componentDidUpdate(prevProps){
+      this.updateCardsList()
+    } 
+*/
 
  render() {
   return (
     <div className='MainContainer'>
-      {this.cons()}
       <header className='header'>
         <h1>
           Our Latest Developments
@@ -25,15 +50,10 @@ class App extends Component {
           <input></input>
         </div>
       </header>
-      
-      <div className='cardsContainer'>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-      </div>
+      <CardList
+        onCardList={this.updateCardsList} 
+        cardData={this.state.cardData}
+        />
       <button className='btnSeeMore'>
         See more >
       </button>

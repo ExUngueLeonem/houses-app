@@ -38,12 +38,6 @@ h1 {
 
 }
 
-.cardsContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
 .filter {
   margin: 45px 0;
 }
