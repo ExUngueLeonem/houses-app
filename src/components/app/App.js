@@ -18,15 +18,15 @@ class App extends Component {
   }
 
   updateCardsList = () => {
-    this.gotService.getData()
+    let promise = this.gotService.getData()
       .then(item => this.setState({cardData: item}))
+      return promise
       //.then(() => console.log('state allo', this.state.cardData))
   }
 
   //я хочу получить массив данных из getData
   //я хочу поместить массив данных в cardList
   //вся эта хуйня асинхронная, поэтому надо, как-то сделать чтобы card list подождал данные
-
 
   componentDidMount(){
     this.updateCardsList()
@@ -51,7 +51,7 @@ class App extends Component {
         </div>
       </header>
       <CardList
-        onCardList={this.updateCardsList} 
+        onUpdateCardsList={this.updateCardsList} 
         cardData={this.state.cardData}
         />
       <button className='btnSeeMore'>
@@ -59,6 +59,7 @@ class App extends Component {
       </button>
 
     </div>//mainContainer
+
 
   );
 
