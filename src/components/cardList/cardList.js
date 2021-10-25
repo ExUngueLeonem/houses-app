@@ -11,15 +11,15 @@ class CardList extends Component {
         super(props);
 
         this.state = {
-            cardList: 'хуй там плавал'
+            cardList: []
         }
 
         this.renderCards = this.renderCards.bind(this);
         //this.setCardList = this.setCardList.bind(this);
     }
 
-    renderCards(){
-        const elements = this.state.cardList.map(card => {
+    renderCards(state){
+        const elements = state.map(card => {
             return( 
             <div className='card' key={card.id}>
                 <div className='cardHeaderContainer'>
@@ -42,8 +42,9 @@ class CardList extends Component {
     componentDidMount(){
         fetch('https://603e38c548171b0017b2ecf7.mockapi.io/homes')
             .then(response => response.json())
-            .then(data => this.setState({cardList: data}))
-            .then(console.log(this.state.cardList))
+            .then(item => this.setState({cardList: item}))
+            .then(console.log('это props cardList', this.props.cardData))
+            //.then(console.log(this.state.cardList))     
 /*         
         this.props.onUpdateCardsList()
             .then(this.getJSXFromObj())
@@ -52,19 +53,18 @@ class CardList extends Component {
             //.then()
  */    
 }
-
+/* 
     componentDidUpdate(prevProps) {
         if (prevProps.cardData !== this.props.cardData) {
             this.setState({cardList: this.elements})    //вопрос
             console.log('АБНАВЛЯЯЙ')
         }
     }
-
+ */
     render() {
         return (
             <div className='cardsContainer'>
-                {/* {this.state.cardList} */}
-                <Card/>
+                {this.renderCards(this.state.cardList)}
             </div>
         )
     }
