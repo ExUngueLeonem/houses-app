@@ -20,16 +20,32 @@ class CardList extends Component {
 
     renderCards(state){
         const elements = state.map(card => {
+            let price = (card.price/1000).toFixed(3);
+            let rest = '';
+            let type
+            switch (card.type) {
+                case 'SupportAvailable':
+                    rest = 'rest'
+                    type = 'Support Available'    
+                    break;
+                case 'IndependentLiving':
+                    type = 'Independent Living'    
+                    break;
+                default:
+                    break;
+            }
+
+           
             return( 
             <div className='card' key={card.id}>
                 <div className='cardHeaderContainer'>
                     <img className='houseImg' alt='houseImage' src="https://loremflickr.com/320/240?random=3"/>
-                    <div className='type'>{card.type}</div>
+                    <div className={`type ${rest}`}>{type}</div>
                 </div>
                 <div className='cardDescription'>
                     <div className='title'>{card.title}</div>
                     <div className='address'>{card.address}</div>
-                    <div className='cost'>New Properties for Sale from <strong>{card.price}</strong></div>
+                    <div className='cost'>New Properties for Sale from <strong>£{price}</strong></div>
                     <div className='ownership'>Shared Ownership Available</div>
                 </div>
                 <Card/>
