@@ -48,7 +48,7 @@ class CardList extends Component {
                     <div className='cost'>New Properties for Sale from <strong>£{price}</strong></div>
                     <div className='ownership'>Shared Ownership Available</div>
                 </div>
-                <Card/>
+                
             </div>  
             )      
         })
