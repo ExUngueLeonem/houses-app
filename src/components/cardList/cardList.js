@@ -18,7 +18,7 @@ class CardList extends Component {
         const elements = this.props.cardData.map(card => {
             let rest = '';
             if (card.type === 'Support Available') rest = 'rest';
-           
+            console.log('cardList rendering')
             return( 
             <div className='card' key={card.id}>
                 <div className='cardHeaderContainer'>
@@ -38,6 +38,10 @@ class CardList extends Component {
     }
 
     componentDidMount(){
+        
+    }
+
+    componentDidUpdate() {
         
     }
     
