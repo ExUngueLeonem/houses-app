@@ -17,18 +17,13 @@ class App extends Component {
     this.updateCardsList = this.updateCardsList.bind(this);
   }
 
-  updateCardsList = () => {
-    let promise = this.gotService.getData()
-      .then(item => this.setState({cardData: item}))
-      .then(() => console.log('state allo', this.state.cardData))
-      return promise
+  updateCardsList = async () => { //correct state
+    const itemList = await this.gotService.getDataArr()
+    this.setState({cardData: itemList})
+    console.log('APP STATE', this.state)        
   }
 
-  //я хочу получить массив данных из getData
-  //я хочу поместить массив данных в cardList
-  //вся эта хуйня асинхронная, поэтому надо, как-то сделать чтобы card list подождал данные
-
-   componentDidMount(){
+  componentDidMount(){
     this.updateCardsList()
   }
  
@@ -37,7 +32,6 @@ class App extends Component {
       this.updateCardsList()
     } 
 */
-
 
  render() {
   return (
@@ -60,7 +54,6 @@ class App extends Component {
       </button>
 
     </div>//mainContainer
-
 
   );
 
