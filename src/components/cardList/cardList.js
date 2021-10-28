@@ -19,10 +19,12 @@ class CardList extends Component {
             let rest = '';
             if (card.type === 'Support Available') rest = 'rest';
             console.log('cardList rendering')
+            
             return( 
             <div className='card' key={card.id}>
                 <div className='cardHeaderContainer'>
-                    <img className='houseImg' alt='houseImage' src="https://loremflickr.com/320/240?random=3"/>
+                 <img className='houseImg' alt='houseImage' src="https://loremflickr.com/320/240?random=3"/>
+
                     <div className={`type ${rest}`}>{card.type}</div>
                 </div>
                 <div className='cardDescription'>

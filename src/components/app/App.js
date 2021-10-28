@@ -27,7 +27,7 @@ class App extends Component {
   componentDidMount(){
     this.updateCardsList()
   }
- 
+  
 /* //предотвратить лишние перерисовки
     componentDidUpdate(prevProps){
       
@@ -66,13 +66,13 @@ class App extends Component {
           <span>Filter</span>
           <input onChange={this.updateFilterList}></input>
         </div>
-        {/* на input нужно повесить событие, которое будет доставать e.target.value
-            должна запускаться функция, которая будет:
-              если символов в инпуте <3, то она ретернит cardData
-              если нет, то функция фильтрует cardData и записывает filteredData. 
-              !!! обязательно условие на апдейт, чтобы много раз не отрисовывалось
-              в cardList передавать результат выполнения этой функции
-              
+        {/* 
+          на input нужно повесить событие, которое будет доставать e.target.value
+          должна запускаться функция, которая будет:
+          если символов в инпуте <3, то она ретернит cardData
+          если нет, то функция фильтрует cardData и записывает filteredData. 
+          !!! обязательно условие на апдейт, чтобы много раз не отрисовывалось
+          в cardList передавать результат выполнения этой функции         
         */}
       </header>
 
