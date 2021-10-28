@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import gotService from '../../services/gotService';
 import CardList from '../cardList'
-
+import Filter from '../filter';
 
 class App extends Component {
   gotService = new gotService();
@@ -14,8 +14,8 @@ class App extends Component {
       cardData: [],
       filteredData: []
     }
-    this.updateFilterList = this.updateFilterList.bind(this)
-    this.updateCardsList = this.updateCardsList.bind(this);
+    this.updateCardsList = this.updateCardsList.bind(this)
+    this.onUpdateFilterList = this.onUpdateFilterList.bind(this);
   }
 
   updateCardsList = async () => { //correct state
@@ -32,7 +32,7 @@ class App extends Component {
       else return true
   }
     
-  updateFilterList(e) {
+  onUpdateFilterList(e) {
     const checkPoint = this.state.cardData;
     if (!e) return this.state.cardData
     if (!this.state.cardData) return
@@ -55,11 +55,7 @@ class App extends Component {
         <h1>
           Our Latest Developments
         </h1>
-
-        <div className='filter'>
-          <span>Filter</span>
-          <input onChange={this.updateFilterList}></input>
-        </div>
+      <Filter onUpdateFilterList={this.onUpdateFilterList}/>
       </header>
 
       <CardList

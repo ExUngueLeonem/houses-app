@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-//import Card from '../card';
 import './cardList.css';
 import gotService from '../../services/gotService';
-//import Card from '../card';
 
 class CardList extends Component {
     gotService = new gotService();
@@ -11,7 +9,6 @@ class CardList extends Component {
         super(props);
 
         this.renderCards = this.renderCards.bind(this);
-        //this.setCardList = this.setCardList.bind(this);
     }
 
     renderCards(){
