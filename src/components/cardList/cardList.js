@@ -39,14 +39,6 @@ class CardList extends Component {
         return elements//arr
     }
 
-    componentDidMount(){
-        
-    }
-
-    componentDidUpdate() {
-        
-    }
-    
     render() {
         return (
             <div className='cardsContainer'>
