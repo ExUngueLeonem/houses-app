@@ -16,9 +16,9 @@ class CardList extends Component {
             let rest = '';
             if (card.type === 'Support Available') rest = 'rest';
             console.log('cardList rendering')
-            
+            const cardHref = `/house/${card.id}`
             return( 
-            <div className='card' key={card.id}>
+            <a className='card' key={card.id} href={cardHref}>
                 <div className='cardHeaderContainer'>
                  <img className='houseImg' alt='houseImage' src="https://loremflickr.com/320/240?random=3"/>
 
@@ -30,7 +30,7 @@ class CardList extends Component {
                     <div className='cost'>New Properties for Sale from <strong>£{card.price}</strong></div>
                     <div className='ownership'>Shared Ownership Available</div>
                 </div>
-            </div>  
+            </a>  
             )      
         })
         return elements//arr

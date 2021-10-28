@@ -26,6 +26,8 @@
     margin-bottom: 38px;
     border: 1px solid #D8D8D8;
     background-color: #F8F8F8;
+    text-decoration: none;
+    color:rgb(24, 24, 24);
   }
   
   .houseImg {
