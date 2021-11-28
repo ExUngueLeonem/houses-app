@@ -1,6 +1,4 @@
-# Getting Started with Create React App
-
-Тестовое задание frontend developer
+# Тестовое задание frontend developer
 
 Верстка Макета https://www.figma.com/file/O6wbnTCIVOyjowWBWAMMDJ/UI-Dev-test-task-2
 Данные для карточек запрашивать аяксом отсюда: https://603e38c548171b0017b2ecf7.mockapi.io/homes
